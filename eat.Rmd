@@ -1,6 +1,6 @@
 ---
 title: "Eating Out"
-author: "your name here"
+author: "America Olivo"
 output: 
   html_document:
     number_sections: true
@@ -35,8 +35,11 @@ mydata <- select(GSS,race,age,eatout)
 mydata <- na.omit(mydata)
 ```
 
+# Methods 
+We will be using a graphical, numerical, and inferential results to figure out if there is a difference among the various races and the way of eating out. Lastly were trying i find if there id a statistical difference between the least , two races with the variable of eating out.
 
 
+# Graphical
 
 
 
