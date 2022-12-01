@@ -28,10 +28,10 @@ require(tigerstats)
 require(knitr)
 require(foreign)
 ```
-```{r, eval=FALSE}
+```{r, eval=TRUE}
 GSS <-read.dta(file="GSS1996.dta")
 GSS <- droplevels(GSS)
-mydata <- select(GSS,race,age,eatout)
+mydata <- select(GSS ,race, age, eatout)
 mydata <- na.omit(mydata)
 ```
 
@@ -41,11 +41,25 @@ We will be using a graphical, numerical, and inferential results to figure out i
 
 # Graphical
 
+```{r}
+barchartGC(~race + eatout, data=mydata)
+barchartGC(~race + eatout, data=mydata, type ="percent")
+```
+
+
+
+This bar chart shows that white people are 85% eating out less than the 20% that dont eat out. 70% of black people eat out and 30% do not. Other races percentage of eating out is about 75% and those who dont are the other 20%. White people eat out the most and black people eat out less between all the groups. The other races are in between the whites and blacks in comparsion of eating out.
+
+
+#Numerical 
 
 ```{r}
-barchartGC(~race + eatout, data = mydata)
-barchartGC(~race + eatout, data = mydata , type= "percent")
+table1 <- xtabs(~race +eatout, data=mydata)
+rowPerc(table1)
+colPerc(table1)
 ```
+
+The table above shows about 83% of white people eat out and 17% of them who don't. About 69% of black people eat out while there's 31% of those who do not eat out. Lastly other races have about 78% of them who do eat out and there are 22% that dont.
 
 
 
